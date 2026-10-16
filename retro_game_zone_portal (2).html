@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Game Zone - Hub Central</title>
+  
+  <!-- FAVICON OFICIAL -->
+  <link rel="icon" type="image/png" href="https://retrogamezone.github.io/RGZ.png">
+  
+  <!-- FONTES GOOGLE & TAILWIND CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --bg-cyber: #090a10;
+      --panel-cyber: #111422;
+      --border-neon: #00f0ff;
+      --text-neon: #00f0ff;
+      --accent-pink: #ff007f;
+      --accent-yellow: #ffe600;
+      --accent-green: #00ff66;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow-x: hidden;
+      background-color: var(--bg-cyber);
+      color: #e2e8f0;
+      font-family: 'Chakra Petch', sans-serif;
+    }
+
+    body {
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.08) 0%, transparent 75%),
+        linear-gradient(rgba(17, 20, 34, 0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17, 20, 34, 0.4) 1px, transparent 1px);
+      background-size: 100% 100%, 20px 20px, 20px 20px;
+    }
+
+    .font-pixel { font-family: 'Press Start 2P', monospace; }
+    .font-mono-code { font-family: 'Share Tech Mono', monospace; }
+
+    .cyber-panel {
+      background: var(--panel-cyber);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.7), inset 0 0 15px rgba(0, 240, 255, 0.03);
+    }
+
+    @keyframes logoGradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .animated-logo-gradient {
+      background: linear-gradient(270deg, #00f0ff, #ffe600, #ff0055, #00f0ff);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: logoGradientAnimation 6s ease infinite;
+    }
+
+    .neon-btn-cyan {
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid #00f0ff;
+      color: #00f0ff;
+      transition: all 0.2s ease;
+    }
+    .neon-btn-cyan:hover {
+      background: #00f0ff;
+      color: #090a10;
+      box-shadow: 0 0 15px #00f0ff;
+    }
+
+    .neon-btn-pink {
+      background: rgba(255, 0, 127, 0.1);
+      border: 1px solid #ff007f;
+      color: #ff007f;
+      transition: all 0.2s ease;
+    }
+    .neon-btn-pink:hover {
+      background: #ff007f;
+      color: #ffffff;
+      box-shadow: 0 0 15px #ff007f;
+    }
+
+    /* Brilho dourado para os ícones */
+    .gold-glow {
+      filter: drop-shadow(0 0 6px #ffe600);
+      color: #ffe600;
+    }
+
+    /* Animação para flutuar e brilhar suavemente */
+    @keyframes floatAndGlow {
+      0%, 100% {
+        transform: translateY(0);
+        filter: drop-shadow(0 0 5px #ffe600);
+      }
+      50% {
+        transform: translateY(-5px);
+        filter: drop-shadow(0 0 12px #ffe600) drop-shadow(0 0 18px rgba(255, 230, 0, 0.8));
+      }
+    }
+
+    .icon-animated {
+      display: inline-block;
+      animation: floatAndGlow 2.5s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+  <!-- PAINEL CENTRAL CYBERPUNK -->
+  <main class="cyber-panel rounded-xl p-6 md:p-10 max-w-2xl w-full flex flex-col items-center text-center gap-6 relative">
+    
+    <!-- IMAGEM DA LOGO COM ANIMAÇÃO PULSE IDÊNTICA AO CÓDIGO ORIGINAL -->
+    <img src="https://retrogamezone.github.io/RGZ-Logo.png" alt="RGZ Logo" class="w-48 h-48 md:w-60 md:h-60 object-contain drop-shadow-[0_0_12px_rgba(0,240,255,0.6)] opacity-90 animate-pulse">
+
+    <!-- TÍTULO COM O GRADIENTE ANIMADO E FONTE PIXEL EXACTOS DO ORIGINAL -->
+    <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-pixel tracking-wider animated-logo-gradient uppercase">
+      RETRO GAME ZONE
+    </h1>
+
+    <p class="text-xs sm:text-sm font-mono-code text-gray-400 max-w-md">
+      Portal de telemetria, estatísticas e registros do sistema de emulação da Retro Game Zone.
+    </p>
+
+    <!-- BOTÕES NEON ABAIXO DO LOGO -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full pt-2">
+      
+      <!-- BOTÃO RGZ RECORDE (COROA DE OURO 👑) -->
+      <a href="https://retrogamezone.github.io/recorde" target="_blank" class="neon-btn-cyan font-bold py-3.5 px-5 rounded-lg flex items-center justify-center gap-2 font-pixel text-xs sm:text-sm tracking-wide text-decoration-none">
+        <span class="text-lg icon-animated">👑</span>
+        <span>RGZ RECORDE</span>
+      </a>
+
+      <!-- BOTÃO RGZ CONQUISTA (TROFÉU DE OURO 🏆) -->
+      <a href="https://retrogamezone.github.io/conquista" target="_blank" class="neon-btn-pink font-bold py-3.5 px-5 rounded-lg flex items-center justify-center gap-2 font-pixel text-xs sm:text-sm tracking-wide text-decoration-none">
+        <span class="text-lg icon-animated" style="animation-delay: 0.4s;">🏆</span>
+        <span>RGZ CONQUISTA</span>
+      </a>
+
+    </div>
+
+    <!-- RODAPÉ SUTIL -->
+    <footer class="pt-2 font-mono-code text-[11px] text-gray-500 border-t border-cyan-500/20 w-full">
+      RETRO GAME ZONE SYSTEM // PORTAL DE ACESSO
+    </footer>
+
+  </main>
+
+</body>
+</html>
